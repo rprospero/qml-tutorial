@@ -12,7 +12,7 @@ the python and the QML to help emphasise the separation.
 
 ** Hello World
 
-[[file:hello][This]] folder contains a minimal example of QML code.  Any QML code that
+[[file:hello][The hello folder]] contains a minimal example of QML code.  Any QML code that
 does not require work from the Python backend can be loaded from this
 Python example.
 
@@ -32,7 +32,7 @@ python3 main.py
 
 ** Compute Stats
 
-[[file:stts][This folder]] starts the journey of interacting between QML and Python.
+[[file:stats][The stats folder]] starts the journey of interacting between QML and Python.
 The module will load a file of X and Y values and display the means of
 the columns.
 
@@ -46,7 +46,7 @@ the columns.
 
 ** Display Stats
 
-[[file:display][This folder]] provides a better display for the statistics that we
+[[file:display][The display folder]] provides a better display for the statistics that we
 calculated in the last chapter.  We also introduce the two different
 types of layout in QML: managed and anchored
 
@@ -60,7 +60,7 @@ types of layout in QML: managed and anchored
 
 ** Adjustable file name
 
-[[file:filename][This folder]] modifies the =Stats= class to allow the file name to be
+[[file:filename][The filename folder]] modifies the =Stats= class to allow the file name to be
 chosen by the QML file.  This introduces both setters for properties
 and the concept of a =Signal=.  Thus far, our getters have always been
 calculations on the data.  We want the calculation to be performed
@@ -76,7 +76,7 @@ our python code where we feel this update is needed.
 
 ** Interactive file name
 
-[[file:interactive][This folder]] adds the first truly interactive elements to our QML file.
+[[file:interactive][The ineractive folder]] adds the first truly interactive elements to our QML file.
 A button can be clicked to display a file dialog, which will then
 update the data file in our =Stats= model.  The =onClicked= and
 =onAccepted= properties are examples of binding to the =clicked= and
@@ -89,3 +89,28 @@ update the data file in our =Stats= model.  The =onClicked= and
 - Find a better position for the file dialog button.
 - Create a =bool= property on the =Stats= model that explains whether
   a file has been loaded.
+
+** Table Model
+
+[[file:table][The table folder]] is a major change compared to the previous updates.
+The =Stats= model is updated to inherit from =QAbstractTableModel=
+instead of merely =QObject=.  This tells Qt that our model contains
+tabular data and requires that we add three new methods to our code.
+
+- rowCount :: The number of rows in our table
+- columnCount :: The number of columns in our table
+- data :: The value at a specific index in the table
+
+Each of these functions takes the =Slot= decorator.  A slot is a
+function that can be called from QML.
+
+The QML was also update to put the stats on the right side of the
+window and a table of the data on the left hand side.  The =TableView=
+requires a =delegate= parameter, which is a QML element that will be
+draw for each data item
+
+*** Exercises
+
+- The current code will produce glitches if the data file has more
+  than two columns.  Either ignore the other columns (easy) or allow
+  an arbitrary column number.

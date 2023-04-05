@@ -11,7 +11,6 @@ Rectangle {
 
   Stats {
     id: myStats
-      onDataChanged: titleText.text = myStats.columnCount()
   }
 
   FileDialog {
