@@ -21,8 +21,21 @@ Run the example
 python3 main.py
 #+END_SRC
 
+*** Exercises
+
+- Change the background to a less garish colour.
+- Give a more personal greeting.
+
 ** Compute Stats
 
 This folder starts the journey of interacting between QML and Python.
-The module will load a file of X and Y values and display various
-statistics through numpy.
+The module will load a file of X and Y values and display the means of
+the columns.
+
+*** New files
+
+- [[file:stats/model.py][model.py]] :: A class for providing statistics to QML.
+
+*** Exercises
+
+- Create new properties to display the sums of the columns
