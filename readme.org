@@ -2,7 +2,7 @@
 
 This repo is a tutorial set for understanding using QML with Python
 for creating GUIs.  Python was chosen due to its status as a modern
-/lingua franca/ of coding, but the concepts apply to [[https://wiki.qt.io/Language_Bindings][dozens of
+/lingua franca/ of coding, but the concepts apply to [[https://wiki.qt.io/Language_Bindings][over a dozen
 languages]].  In fact, the QML files allows changing the backend
 implementation language without making any changes to the interface.
 
@@ -73,3 +73,19 @@ our python code where we feel this update is needed.
 
 *** Exercises
 - Set title text to the name of the data file
+
+** Interactive file name
+
+[[file:interactive][This folder]] adds the first truly interactive elements to our QML file.
+A button can be clicked to display a file dialog, which will then
+update the data file in our =Stats= model.  The =onClicked= and
+=onAccepted= properties are examples of binding to the =clicked= and
+=accepted= properties, respectively.
+
+*** Exercises
+- Using the =console.log= function, bind to the =dataChanged= signal
+  on the =Stats= model and print the file name to the console every
+  time the data changes.
+- Find a better position for the file dialog button.
+- Create a =bool= property on the =Stats= model that explains whether
+  a file has been loaded.
