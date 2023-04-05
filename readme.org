@@ -1,0 +1,28 @@
+* QML Tutorial
+
+This repo is a tutorial set for understanding using QML with Python
+for creating GUIs.  Python was chosen due to its status as a modern
+/lingua franca/ of coding, but the concepts apply to [[https://wiki.qt.io/Language_Bindings][dozens of
+languages]].  In fact, the QML files allows changing the backend
+implementation language without making any changes to the interface.
+
+* Hello World
+
+This folder contains a minimal example of QML code.  Any QML code that
+does not require work from the Python backend can be loaded from this
+Python example.
+
+- [[file:home/view.qml][view.qml]] :: A QML file displaying a simple greeting
+- [[file:home/main.py][main.py]] :: The python script to display a QML file
+
+Run the example
+
+#+BEGIN_SRC shell
+python3 main.py
+#+END_SRC
+
+* Compute Stats
+
+This folder starts the journey of interacting between QML and Python.
+The module will load a file of X and Y values and display various
+statistics through numpy.
