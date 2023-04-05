@@ -6,9 +6,13 @@ for creating GUIs.  Python was chosen due to its status as a modern
 languages]].  In fact, the QML files allows changing the backend
 implementation language without making any changes to the interface.
 
+Through a series of alternating sections, we'll create a small data
+analysis application.  We will attempt to alternate making changes to
+the python and the QML to help emphasise the separation.
+
 ** Hello World
 
-This folder contains a minimal example of QML code.  Any QML code that
+[[file:hello][This]] folder contains a minimal example of QML code.  Any QML code that
 does not require work from the Python backend can be loaded from this
 Python example.
 
@@ -28,7 +32,7 @@ python3 main.py
 
 ** Compute Stats
 
-This folder starts the journey of interacting between QML and Python.
+[[file:stts][This folder]] starts the journey of interacting between QML and Python.
 The module will load a file of X and Y values and display the means of
 the columns.
 
@@ -39,3 +43,17 @@ the columns.
 *** Exercises
 
 - Create new properties to display the sums of the columns
+
+** Display Stats
+
+[[file:display][This folder]] provides a better display for the statistics that we
+calculated in the last chapter.  We also introduce the two different
+types of layout in QML: managed and anchored
+
+*** Exercises
+
+- Put the X and Y means on the same row
+- Move the title to the bottom of the window
+- Move the title to the left side of the window
+- Remove the =GridLayout= and layout the entire window with anchors
+  (this will be tedious).
