@@ -114,3 +114,22 @@ draw for each data item
 - The current code will produce glitches if the data file has more
   than two columns.  Either ignore the other columns (easy) or allow
   an arbitrary column number.
+
+** Charting
+
+[[file:chart][The chart folder]] holds an alternate view of our data.  Instead of the
+stats and tables of our previous examples, it contains a 2D plot of
+the data.  While this is a nice example of the Qt Charts library, the
+critical lesson of this example is that this change occurs without
+editing a single line of Python code.  It is a sign of high code
+quality when a model is used in multiple QML files or when a single
+QML file is applied to multiple models, as this indicates a strong
+decoupling between the model and the display.  This is not always
+achievable at the highest level, but should be a goal for smaller
+components.
+
+*** Exercises
+
+- The current chart range is hard coded.  Add the necessary data
+  properties to the =Stats= model to allow the axes to scale with the
+  data.
