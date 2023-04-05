@@ -57,3 +57,19 @@ types of layout in QML: managed and anchored
 - Move the title to the left side of the window
 - Remove the =GridLayout= and layout the entire window with anchors
   (this will be tedious).
+
+** Adjustable file name
+
+[[file:filename][This folder]] modifies the =Stats= class to allow the file name to be
+chosen by the QML file.  This introduces both setters for properties
+and the concept of a =Signal=.  Thus far, our getters have always been
+calculations on the data.  We want the calculation to be performed
+again when the data is updated, but we don't want to waste resources
+by continuously performing the same calculation repeatedly.  This
+dilemma is solved by attaching a notification signal to the property.
+The QML only calls into python to update the data when it receives the
+appropriate signal.  In turn, we can emit this signal at any point in
+our python code where we feel this update is needed.
+
+*** Exercises
+- Set title text to the name of the data file
