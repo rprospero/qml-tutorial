@@ -12,8 +12,8 @@ This folder contains a minimal example of QML code.  Any QML code that
 does not require work from the Python backend can be loaded from this
 Python example.
 
-- [[file:home/view.qml][view.qml]] :: A QML file displaying a simple greeting
-- [[file:home/main.py][main.py]] :: The python script to display a QML file
+- [[file:hello/view.qml][view.qml]] :: A QML file displaying a simple greeting
+- [[file:hello/main.py][main.py]] :: The python script to display a QML file
 
 Run the example
 
